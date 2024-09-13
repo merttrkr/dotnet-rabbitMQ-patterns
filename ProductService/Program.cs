@@ -4,6 +4,7 @@ using ProductService.Infrastructure.Persistence.Repositories.Interfaces;
 using ProductService.Infrastructure.Persistence.Repositories;
 using ProductService.Application.Interfaces;
 using ProductService.Application;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PSQLServer")));
+
+// Add MassTransit and RabbitMQ configuration
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+#pragma warning disable CRRSP06 // A misspelled word has been found
+        cfg.Host("localhost", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+    });
+});
+
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddScoped<IProductHandler, ProductHandler>();
