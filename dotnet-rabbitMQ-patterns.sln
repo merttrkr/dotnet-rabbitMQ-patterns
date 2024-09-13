@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryService", "Invento
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentService", "PaymentService\PaymentService.csproj", "{29420109-EBEC-4645-BFAC-6A2DE645B3AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutService", "CheckoutService\CheckoutService.csproj", "{AFC5FEB6-391B-43AF-95F6-A6601CEE0817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckoutService", "CheckoutService\CheckoutService.csproj", "{AFC5FEB6-391B-43AF-95F6-A6601CEE0817}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{4CD6ACB2-EEEA-4BE9-AED4-2BC5B34000EC}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
