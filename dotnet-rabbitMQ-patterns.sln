@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{4CD6ACB2
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketService", "BasketService\BasketService.csproj", "{24A2F3C1-F8D2-486A-9F91-7EE12B03F05D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{AFC5FEB6-391B-43AF-95F6-A6601CEE0817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC5FEB6-391B-43AF-95F6-A6601CEE0817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC5FEB6-391B-43AF-95F6-A6601CEE0817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A2F3C1-F8D2-486A-9F91-7EE12B03F05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A2F3C1-F8D2-486A-9F91-7EE12B03F05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A2F3C1-F8D2-486A-9F91-7EE12B03F05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A2F3C1-F8D2-486A-9F91-7EE12B03F05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
