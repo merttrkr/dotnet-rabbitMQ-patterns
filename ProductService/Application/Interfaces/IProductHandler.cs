@@ -4,5 +4,6 @@ namespace ProductService.Application.Interfaces;
 
 public interface IProductHandler
 {
-     Task AddProduct(Product product);
+     Task CreateProduct(Product product);
+    Task<Product> GetProduct(Guid id, CancellationToken cancellationToken);
 }

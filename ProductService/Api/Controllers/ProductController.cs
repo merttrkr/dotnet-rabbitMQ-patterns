@@ -16,13 +16,22 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddProduct([FromBody] Product product )
+    public async Task<IActionResult> CreateProduct([FromBody] Product product )
     {
         if (product == null)
         {
             return BadRequest("product is null");
         }
-        await _productHandler.AddProduct(product);
+        await _productHandler.CreateProduct(product);
         return Ok("Product added successfully");
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetProduct([FromRoute] Guid id,CancellationToken cancellationToken)
+    {
+        if (id == null)
+        {
+            return BadRequest("id is null");
+        }
+        return Ok(await _productHandler.GetProduct(id, cancellationToken));
     }
 }

@@ -12,9 +12,16 @@ namespace ProductService.Application
         {
             _productRepository = productRepository;
         }
-        public async Task AddProduct(Product product)
+        public async Task CreateProduct(Product product)
         {
             await _productRepository.Add(product);
+        }
+
+        public async Task<Product> GetProduct(Guid id, CancellationToken cancellationToken)
+        {
+            Product? product = await _productRepository.Get(predicate: b=> b.Id == id);
+
+            return product;
         }
     }
 }
