@@ -1,5 +1,4 @@
 ﻿using Core.Persistence.Repositories;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
@@ -9,7 +8,7 @@ public interface IBaseRepository<TEntity>
     where TEntity : Entity
 {
     Task<TEntity> Add(TEntity entity);
-    public Task<TEntity?> Get(Expression<Func<TEntity, bool>> predicate,
+    Task<TEntity?> Get(Expression<Func<TEntity, bool>> predicate,
                                             Func<IQueryable<TEntity>,IIncludableQueryable<TEntity,object>>? include = null,
                                             bool withDeleted = false,
                                             bool enableTracking = true,

@@ -21,7 +21,10 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Application\" />
-    <Folder Include="Infrastructure\Persistence\Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductService\ProductService.csproj" />
   </ItemGroup>
 
 </Project>

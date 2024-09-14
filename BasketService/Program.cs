@@ -1,4 +1,6 @@
 using BasketService.Infrastructure.Persistence;
+using BasketService.Infrastructure.Persistence.Repositories;
+using BasketService.Infrastructure.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PSQLServer")));
+
+builder.Services.AddScoped<IBasketRepository,BasketRepository>();
+builder.Services.AddScoped<IBasketItemRepository,BasketItemRepository>();
 //builder.Services.AddMassTransit(x =>
 //{
 //    x.AddConsumer<AddedToBasketConsumer>();
