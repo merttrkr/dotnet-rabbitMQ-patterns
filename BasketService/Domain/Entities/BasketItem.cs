@@ -1,6 +1,4 @@
-﻿using Core.Persistence.Repositories;
-
-namespace BasketService.Domain.Entities
+﻿namespace BasketService.Domain.Entities
 {
     public class BasketItem:Entity
     {

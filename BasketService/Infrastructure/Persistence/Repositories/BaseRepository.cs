@@ -1,5 +1,5 @@
-﻿using BasketService.Infrastructure.Persistence.Repositories.Interfaces;
-using Core.Persistence.Repositories;
+﻿using BasketService.Domain.Entities;
+using BasketService.Infrastructure.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;

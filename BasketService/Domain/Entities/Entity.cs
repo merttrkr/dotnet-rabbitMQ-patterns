@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Core.Persistence.Repositories;
+namespace BasketService.Domain.Entities;
 
 public abstract class Entity
 {

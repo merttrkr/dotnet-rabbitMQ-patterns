@@ -1,4 +1,4 @@
-﻿using Core.Persistence.Repositories;
+﻿using BasketService.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
