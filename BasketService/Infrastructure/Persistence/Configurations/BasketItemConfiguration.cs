@@ -8,43 +8,37 @@ namespace BasketService.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<BasketItem> builder)
         {
-            // Configure the primary key
+            // Primary key
             builder.HasKey(b => b.Id);
 
-            // Configure properties
-            builder.Property(b => b.Id)
-                .HasColumnName("Id")
-                .IsRequired();
-
-            // Configure ProductId and index it for faster lookups
+            // Configure ProductId and index it for performance
             builder.Property(bi => bi.ProductId)
                 .HasColumnName("ProductId")
                 .IsRequired();
 
-            builder.HasIndex(bi => bi.ProductId)  // Index ProductId for performance
+            builder.HasIndex(bi => bi.ProductId)
                 .HasDatabaseName("IX_BasketItem_ProductId");
 
-            // Configure ProductName with a length constraint
+            // ProductName, Price, and Quantity
             builder.Property(bi => bi.ProductName)
                 .HasColumnName("ProductName")
                 .HasMaxLength(100)
                 .IsRequired();
 
-            // Configure Price with precision
             builder.Property(bi => bi.Price)
                 .HasColumnName("Price")
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
-            // Configure Quantity
             builder.Property(bi => bi.Quantity)
                 .HasColumnName("Quantity")
                 .IsRequired();
 
-            // Configure auditing fields (from base class)
+            // Auditing fields
             builder.Property(b => b.CreatedDate).IsRequired();
-            builder.Property(b => b.UpdatedDate).IsRequired(false); // Optional
-            builder.Property(b => b.DeletedDate).IsRequired(false); // Optional
+            builder.Property(b => b.UpdatedDate).IsRequired(false);
+            builder.Property(b => b.DeletedDate).IsRequired(false);
         }
     }
+
 }
